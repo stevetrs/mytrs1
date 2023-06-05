@@ -1,4 +1,6 @@
 {
-"trsed_path":"已汉化的游戏的data文件夹路径，格式为：C:\\new\\新建文件夹\\www\\data\\",
-"untrs_path":"未汉化的data路径，注意路径要用双反斜杠\\，以及data后面也要有\\"
+"trsed_path":"F:\\system\\new\\亚里纱与魔典1.03\\www\\data\\",
+"untrs_path":"F:\\system\\data\\",
+"diff":0.1,
+"difflist":true
 }
