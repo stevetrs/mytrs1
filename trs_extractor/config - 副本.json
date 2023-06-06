@@ -4,7 +4,8 @@
 "diff":0.1,
 "difflist":true,
 "upperkey":["list"],
-"difflist2":true
+"difflist2":true,
+"readable_output":false
 }
 记得删掉下面这段文字，文件名字删掉副本
 "trsed_path"：已汉化游戏的data路径，注意要用双反斜杠，data后面也要有
@@ -12,6 +13,7 @@
 "diff"：（0-1），用来调整字典中有百分之多少的非str，list，dict数据不匹配时，仍认为这个字典是匹配的，仍对相应的文本进行替换（不匹配时不会替换文本），适当调高
 这个数值，有利于减少漏翻，但是过高可能会导致bug，设为0时关闭此功能。发现bug，请调低或设为0
 "difflist"，"upperkey"，"difflist2"三个配套，修改的话仔细看看最后几段话，不懂最好别改。没有改，但是出了bug的话，把两个true改成false。
+"readable_output":true/false,是否将结果输出为易读格式，true的话，虽然便于人工查看，但是文件大小会变大（不多，也就三倍大小）
 
 ☆所有漏翻文本均可通过untrsfix提取，并手动机翻补足。所以在没有把握的情况下，推荐宁愿机翻补足，也不要冒险出bug，特别是在你不会找bug原因的情况下。
 并且无论如何，版本更新后的新增文本都要手动不足机翻。
