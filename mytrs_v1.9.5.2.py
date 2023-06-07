@@ -113,9 +113,7 @@ def tojson(data,name):
     except Exception as e:
         print(traceback.format_exc())
         print(e)
-        f1 = open('{}_fail.txt'.format(name), 'w', encoding='utf8')
-        print(data, file=f1)
-        f1.close()
+        data.to_to_excel(f'{name}_fail.xlsx')
         return 0
 #百度翻译
 def baidu(targ,QPS,NPQ,appid, appkey, from_lang, to_lang,limits,used,last):
@@ -404,7 +402,7 @@ if a == 'y':
             if tojson(target, 'TrsData.bin'):
                 print('已将翻译数据保存在TrsData.bin内\r\n\r\n')
             else:
-                print('已将翻译数据保存在TrsData.bin_fail.txt内\r\n\r\n')
+                print('已将翻译数据保存在TrsData.bin_fail.xlsx内\r\n\r\n')
             input()
         target['src'] = allstr.replace(spr[1], '\n').replace(spr[0], '\r').rstrip('↑☆↓☆').split('↑☆↓☆')
         if not ib:break
@@ -415,18 +413,18 @@ if a == 'y':
         if tojson(target, 'TrsData.bin'):
             print('翻译完成，已保存为TrsData.bin\r\n\r\n')
         else:
-            print('翻译完成，但保存出错，将结果临时保存为TrsData.bin_fail.txt，请自行转换为json格式\r\n\r\n')
+            print('翻译完成，但保存出错，将结果临时保存为TrsData.bin_fail.xlsx，请自行转换为json格式\r\n\r\n')
     #如果没有完整翻译，将已翻译部分导出为TrsData.bin，未翻译部分导出为untrsed.json
     else:
         if ib:
             if tojson(target[:ib], 'TrsData.bin'):
                 print('翻译全部未完成，将已翻译部分保存为TrsData.bin\r\n')
             else:
-                print('翻译全部未完成，且保存出错，将翻译结果临时保存为TrsData.bin_fail.txt，请自行转换为json格式\r\n')
+                print('翻译全部未完成，且保存出错，将翻译结果临时保存为TrsData.bin_fail.xlsx，请自行转换为json格式\r\n')
             if tojson(target[ib:], 'untrsed.json'):
                 print('翻译全部未完成，将未翻译部分保存为untrsed.json\r\n\r\n')
             else:
-                print('翻译全部未完成，且保存出错，将未翻译部分临时保存为untrsed.json_fail.txt，请自行转换为json格式\r\n\r\n')
+                print('翻译全部未完成，且保存出错，将未翻译部分临时保存为untrsed.json_fail.xlsx，请自行转换为json格式\r\n\r\n')
     if len(error):
         print('已将翻译失败部分保存为error.json\r\n')
         error_o = json.dumps(error, indent=4, ensure_ascii=False)
