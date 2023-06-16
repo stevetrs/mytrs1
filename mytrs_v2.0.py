@@ -421,11 +421,22 @@ except Exception as e:
     input('请确保config.json格式正确')
 
 #读取ManualTransFile.json并删除无用字符串
-data=readjson('ManualTransFile.json')
-if config['cleaner']:
-    print('剔除无用字符串中，请稍后......\r\n')
-    for key in data.keys():
-        if not cleaner(key):del data[key]
+try:
+    data=readjson('ManualTransFile.json')
+except Exception as e:
+    print(traceback.format_exc())
+    print(e)
+    input('请确保ManualTransFile.json存在且格式正确')
+try:
+    if config['cleaner']:
+        print('剔除无用字符串中，请稍后......\r\n')
+        keys=list(data.keys())
+        for key in keys:
+            if not cleaner(key):del data[key]
+except Exception as e:
+            print(traceback.format_exc())
+            print(e)
+            input('cleaner功能出错，截图并请上报bug')
 # 第一次翻译
 try:
     data,sortedkeys,error=mytrs(data,enginelist)

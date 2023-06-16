@@ -41,7 +41,8 @@ trsdata=readjson('TrsData.bin')
 #剔除无用字符
 print('处理中，请稍等………………')
 if cleaner1:
-    for key in data.keys():
+    keys=list(data.keys())
+    for key in keys:
         if not cleaner(key): del data[key]
 #将索引设为原文
 for key in trsdata.keys():
