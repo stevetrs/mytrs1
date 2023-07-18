@@ -20,7 +20,7 @@
         "xiaoniu"
     ],
     "baidu": {
-        "dic": 0,
+        "dic": "dict.json",
         "appid": "自己填",
         "appkey": "自己填",
         "from_lang": "jp",
@@ -31,7 +31,7 @@
         "usage": 0
     },
     "baidu2": {
-        "dic": 0,
+        "dic": "dict.json",
         "appid": "自己填",
         "appkey": "自己填",
         "from_lang": "jp",
@@ -42,7 +42,7 @@
         "usage": 0
     },
     "caiyun": {
-        "dic": 0,
+        "dic": "dict.json",
         "token": "自己填",
         "direction": "ja2zh",
         "NPQ": 3000,
@@ -58,6 +58,16 @@
         "NPQ": 3000,
         "QPS": 50,
         "limits": 996000,
+        "usage": 0
+    },
+    "deepl": {
+        "dic": "dict.json",
+        "authorization": "相当于百度的id+key",
+        "source_lang": "JA",
+        "target_lang": "ZH",
+        "NPQ": 5000,
+        "glossary_id": false,
+        "limits": 400000,
         "usage": 0
     }
 }
